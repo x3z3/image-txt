@@ -11,6 +11,9 @@ Name the image that you want to encode as sample_encoded.jpg (or alternatively, 
 
 Make sure you have the encoded.txt file in same directory as decoder.py. Run the program, and wait for the sample_decoded.jpg to be produced.
 
+### Fragmenter
+
+Breaks the encoded.txt file into fragments of max size. Edit the max char length in the fragmenter.py file. Add a buffer to potential add some headerfile information.
 
 ## Motivation
 
