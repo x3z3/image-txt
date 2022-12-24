@@ -22,8 +22,6 @@ def writeToFile(string):
 def main():
     if os.path.exists("encoded.txt"):
         os.remove("encoded.txt")
-    else:
-        print("The file does not exist")
 
     p = Image.open(SAMPLE_IMAGE_PATH)
     p = p.convert(mode="RGB")
