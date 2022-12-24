@@ -15,7 +15,7 @@ def main():
         return
     
     data = ""
-    for file in os.listdir("fragments"):
+    for file in sorted(os.listdir("fragments")):
         data += readFromFile(os.path.join("fragments", file))   
 
     writeToFile("aggregated.txt", data)
