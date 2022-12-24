@@ -1,19 +1,27 @@
 # image-txt
 Encoder and Decoder to convert an image into text.
 
-## Working
+## Working of System
 
-### Encoder
+### 1. Encoder
 
-Name the image that you want to encode as sample_encoded.jpg (or alternatively, rename the original file in encoder.py). Run the program, and wait for it to produce the encoded.txt file.
+Name the image that you want to encode as sample.jpg (or rename the original file in encoder.py). Run the program, and wait for it to produce the encoded.txt file. The program also produces a sample_encoded.jpg file which is a downscaled version of the original image.
 
-### Decoder
+### 2. Fragmenter
 
-Make sure you have the encoded.txt file in same directory as decoder.py. Run the program, and wait for the sample_decoded.jpg to be produced.
+Breaks the encoded.txt file into fragments of max size. Edit the max char length in the fragmenter.py file. Add a buffer to potentially add some headerfile information (Next TODO).
 
-### Fragmenter
+### 3. Networking
 
-Breaks the encoded.txt file into fragments of max size. Edit the max char length in the fragmenter.py file. Add a buffer to potential add some headerfile information.
+Send the fragments across the network of your preferred choice.
+
+### 4. Aggregator
+
+Joins the fragmented files in serial order from the fragments folder into a single file to be able to be decoded. Produces a file called aggregated.txt.
+
+### 5. Decoder
+
+Make sure you have the aggregated.txt file in same directory as decoder.py. Run the program, and wait for the sample_decoded.jpg to be produced. (Alternatively, the file can be renamed to have any encoded file)
 
 ## Motivation
 
