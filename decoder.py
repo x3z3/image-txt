@@ -5,6 +5,8 @@ from PIL import Image
 SAMPLE_IMAGE_PATH = "sample.jpg"
 DECODED_IMAGE_PATH = "sample_decoded.jpg"
 
+READFILE = "aggregated.txt"
+
 STRING_MAP = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
 INT_MAP = {STRING_MAP[i]: i for i in range(len(STRING_MAP))}
 
@@ -15,17 +17,13 @@ def convertToChar(value):
 def convertToValue(char):
     return INT_MAP[char]*4
 
-def writeToFile(string):
-    with open("encoded.txt", "a") as f:
-        f.write(string)
-
 def readFromFile():
-    with open("encoded.txt", "r") as f:
+    with open(READFILE, "r") as f:
         return f.read()
 
 def main():
-    if not os.path.exists("encoded.txt"):
-        print("The encoded file does not exist")
+    if not os.path.exists(READFILE):
+        print("The encoded file " + READFILE + " does not exist")
         return
 
     string = readFromFile()
