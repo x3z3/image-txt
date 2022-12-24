@@ -29,14 +29,16 @@ def main():
     image = np.array(p).astype(int)
 
     string = ""
+    string += str(image.shape[0]) + '*' + str(image.shape[1]) + '~'
     for row in range(image.shape[0]):
         for col in range(image.shape[1]):
             for channel in range(image.shape[2]):
                 char = str(convertToChar(image[row, col, channel]))
                 string += char
-                if len(string) == 4:
+                if len(string) >= 10:
                     writeToFile(string)
                     string = ""
+    writeToFile(string)
     
     p = Image.fromarray(image.astype(np.uint8))
     p.save(ENCODED_IMAGE_PATH)

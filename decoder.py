@@ -10,6 +10,9 @@ READFILE = "aggregated.txt"
 STRING_MAP = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/'
 INT_MAP = {STRING_MAP[i]: i for i in range(len(STRING_MAP))}
 
+H = 270
+W = 480
+
 def convertToChar(value):
     value = value//4
     return STRING_MAP[value]
@@ -27,7 +30,10 @@ def main():
         return
 
     string = readFromFile()
-    image = np.zeros((270, 480, 3), dtype=np.uint8)
+    H = int(string[:string.index('*')])
+    W = int(string[string.index('*')+1:string.index('~')])
+    string = string[string.index('~')+1:]
+    image = np.zeros((H, W, 3), dtype=np.uint8)
     ind = 0
     for row in range(image.shape[0]):
         for col in range(image.shape[1]):
