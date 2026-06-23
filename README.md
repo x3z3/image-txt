@@ -62,4 +62,3 @@ It is a tiny hacky experiment in asking:
 * Compression
 * Cleaner CLI
 * Better image format support
-Cover image: Skitterphoto / Pixabay, via Wikimedia Commons, CC0.
